@@ -13,6 +13,8 @@
 @end
 
 @implementation CTS_LogIn
+@synthesize strEmail;
+@synthesize strPassword;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
