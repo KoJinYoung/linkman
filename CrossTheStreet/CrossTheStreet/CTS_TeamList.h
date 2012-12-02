@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CTS_CellTeamList.h"
+#import "CTS_TeamListCell.h"
 
 @interface CTS_TeamList : UIViewController<NSURLConnectionDataDelegate, NSURLConnectionDelegate, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UIAlertViewDelegate> {
     
