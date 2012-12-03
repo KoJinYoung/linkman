@@ -8,6 +8,8 @@
 
 #import "CTS_LogIn.h"
 
+#import "CTS_SingletonObject.h"
+
 @interface CTS_LogIn ()
 
 @end
@@ -15,15 +17,6 @@
 @implementation CTS_LogIn
 @synthesize strEmail;
 @synthesize strPassword;
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -38,5 +31,21 @@
 }
 
 - (IBAction)actionLogin:(id)sender {
+    
+    NSString *token = nil;
+    
+    CTS_SingletonObject *singletonObj = [CTS_SingletonObject getSingletonObject];
+    
+    [singletonObj setToken:token];
+    
+    BOOL isWritten = [singletonObj saveStringToFile];
+    
+    if (isWritten) {
+        NSLog(@"success to save token");
+    }
+    else {
+        NSLog(@"fail to save token");
+    }
+    
 }
 @end

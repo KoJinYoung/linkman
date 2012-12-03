@@ -7,7 +7,6 @@
 //
 
 #import "CTS_Team.h"
-#import "CTS_CommonValues.h"
 
 @interface CTS_Team ()
 
