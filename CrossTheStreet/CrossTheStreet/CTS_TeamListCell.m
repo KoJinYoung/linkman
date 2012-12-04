@@ -6,9 +6,9 @@
 //  Copyright (c) 2012년 LinkMan. All rights reserved.
 //
 
-#import "CTS_CellTeamList.h"
+#import "CTS_TeamListCell.h"
 
-@implementation CTS_CellTeamList
+@implementation CTS_TeamListCell
 @synthesize cell_title_lable;
 @synthesize cell_age_lable;
 @synthesize cell_num_lable;

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CTS_CellTeamList : UITableViewCell
+@interface CTS_TeamListCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *cell_title_lable;
 @property (weak, nonatomic) IBOutlet UILabel *cell_age_lable;
 @property (weak, nonatomic) IBOutlet UILabel *cell_num_lable;

@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5F1853A516643DEE00DBF494 /* CTS_CellTeamList.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1853A416643DEE00DBF494 /* CTS_CellTeamList.m */; };
+		5F1853A516643DEE00DBF494 /* CTS_TeamListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1853A416643DEE00DBF494 /* CTS_TeamListCell.m */; };
 		5F1CD02816314B0800643156 /* CTS_Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1CD02716314B0800643156 /* CTS_Team.m */; };
+		5F1F9C88166BDD6500925E20 /* CTS_SingletonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1F9C87166BDD6500925E20 /* CTS_SingletonObject.m */; };
 		5F542ED116684ED6004D6714 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F542ECF16684ED6004D6714 /* MainStoryboard_iPhone.storyboard */; };
 		5F60DCFA166796C600D6DE00 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F60DCF9166796C600D6DE00 /* SystemConfiguration.framework */; };
 		5F60DD0616679B5800D6DE00 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F60DD051667988200D6DE00 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -28,13 +29,17 @@
 		5F6BD632160F19C800755730 /* CTS_AdmireView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6BD631160F19C800755730 /* CTS_AdmireView.m */; };
 		5F6FF40F16672E2100E42238 /* CTS_SignUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6FF40E16672E2100E42238 /* CTS_SignUp.m */; };
 		5F6FF41216672E3700E42238 /* CTS_LogIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6FF41116672E3700E42238 /* CTS_LogIn.m */; };
+		5FA03EFE166B7ADB006C1143 /* img_person.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FA03EFD166B7ADB006C1143 /* img_person.png */; };
+		5FA03F05166BB7D6006C1143 /* CTS_TeamCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA03F04166BB7D6006C1143 /* CTS_TeamCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5F1853A316643DEE00DBF494 /* CTS_CellTeamList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTS_CellTeamList.h; sourceTree = "<group>"; };
-		5F1853A416643DEE00DBF494 /* CTS_CellTeamList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTS_CellTeamList.m; sourceTree = "<group>"; };
+		5F1853A316643DEE00DBF494 /* CTS_TeamListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTS_TeamListCell.h; sourceTree = "<group>"; };
+		5F1853A416643DEE00DBF494 /* CTS_TeamListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTS_TeamListCell.m; sourceTree = "<group>"; };
 		5F1CD02616314B0800643156 /* CTS_Team.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTS_Team.h; sourceTree = "<group>"; };
 		5F1CD02716314B0800643156 /* CTS_Team.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTS_Team.m; sourceTree = "<group>"; };
+		5F1F9C86166BDD6500925E20 /* CTS_SingletonObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTS_SingletonObject.h; sourceTree = "<group>"; };
+		5F1F9C87166BDD6500925E20 /* CTS_SingletonObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTS_SingletonObject.m; sourceTree = "<group>"; };
 		5F542ED016684ED6004D6714 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		5F60DCF9166796C600D6DE00 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5F60DD041667988200D6DE00 /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -66,6 +71,12 @@
 		5F6FF40E16672E2100E42238 /* CTS_SignUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTS_SignUp.m; sourceTree = "<group>"; };
 		5F6FF41016672E3700E42238 /* CTS_LogIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTS_LogIn.h; sourceTree = "<group>"; };
 		5F6FF41116672E3700E42238 /* CTS_LogIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTS_LogIn.m; sourceTree = "<group>"; };
+		5FA03EFD166B7ADB006C1143 /* img_person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_person.png; sourceTree = "<group>"; };
+		5FA03F03166BB7D6006C1143 /* CTS_TeamCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTS_TeamCell.h; sourceTree = "<group>"; };
+		5FA03F04166BB7D6006C1143 /* CTS_TeamCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTS_TeamCell.m; sourceTree = "<group>"; };
+		5FBE9710166BD4CB00D0FE9E /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ko; path = ko.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		5FBE9711166BD4CB00D0FE9E /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ko; path = ko.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		5FBE9712166BD4CB00D0FE9E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +97,7 @@
 		5F542ECE16684E1B004D6714 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				5FA03EFD166B7ADB006C1143 /* img_person.png */,
 			);
 			name = image;
 			sourceTree = "<group>";
@@ -130,6 +142,7 @@
 		5F6BD602160F101A00755730 /* CrossTheStreet */ = {
 			isa = PBXGroup;
 			children = (
+				5FA03EFB166B4AB1006C1143 /* Profile */,
 				5F542ECE16684E1B004D6714 /* image */,
 				5F60DCFC1667970700D6DE00 /* Reachability */,
 				5F6FF4161667309C00E42238 /* StoryBoard */,
@@ -163,12 +176,14 @@
 		5F6FF3EA1665A47E00E42238 /* Team */ = {
 			isa = PBXGroup;
 			children = (
-				5F1853A316643DEE00DBF494 /* CTS_CellTeamList.h */,
-				5F1853A416643DEE00DBF494 /* CTS_CellTeamList.m */,
+				5F1853A316643DEE00DBF494 /* CTS_TeamListCell.h */,
+				5F1853A416643DEE00DBF494 /* CTS_TeamListCell.m */,
 				5F1CD02616314B0800643156 /* CTS_Team.h */,
 				5F1CD02716314B0800643156 /* CTS_Team.m */,
 				5F6BD61A160F101A00755730 /* CTS_TeamList.h */,
 				5F6BD61B160F101A00755730 /* CTS_TeamList.m */,
+				5FA03F03166BB7D6006C1143 /* CTS_TeamCell.h */,
+				5FA03F04166BB7D6006C1143 /* CTS_TeamCell.m */,
 			);
 			name = Team;
 			sourceTree = "<group>";
@@ -215,6 +230,8 @@
 			isa = PBXGroup;
 			children = (
 				5F6FF40B16664A4000E42238 /* CTS_CommonValues.h */,
+				5F1F9C86166BDD6500925E20 /* CTS_SingletonObject.h */,
+				5F1F9C87166BDD6500925E20 /* CTS_SingletonObject.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -226,6 +243,13 @@
 				5F6BD617160F101A00755730 /* MainStoryboard_iPad.storyboard */,
 			);
 			name = StoryBoard;
+			sourceTree = "<group>";
+		};
+		5FA03EFB166B4AB1006C1143 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +288,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ko,
 			);
 			mainGroup = 5F6BD5ED160F101A00755730;
 			productRefGroup = 5F6BD5F9160F101A00755730 /* Products */;
@@ -286,6 +311,7 @@
 				5F6BD613160F101A00755730 /* Default-568h@2x.png in Resources */,
 				5F6BD619160F101A00755730 /* MainStoryboard_iPad.storyboard in Resources */,
 				5F542ED116684ED6004D6714 /* MainStoryboard_iPhone.storyboard in Resources */,
+				5FA03EFE166B7ADB006C1143 /* img_person.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,10 +329,12 @@
 				5F6BD62F160F159000755730 /* CTS_BBSView.m in Sources */,
 				5F6BD632160F19C800755730 /* CTS_AdmireView.m in Sources */,
 				5F1CD02816314B0800643156 /* CTS_Team.m in Sources */,
-				5F1853A516643DEE00DBF494 /* CTS_CellTeamList.m in Sources */,
+				5F1853A516643DEE00DBF494 /* CTS_TeamListCell.m in Sources */,
 				5F6FF40F16672E2100E42238 /* CTS_SignUp.m in Sources */,
 				5F6FF41216672E3700E42238 /* CTS_LogIn.m in Sources */,
 				5F60DD0616679B5800D6DE00 /* Reachability.m in Sources */,
+				5FA03F05166BB7D6006C1143 /* CTS_TeamCell.m in Sources */,
+				5F1F9C88166BDD6500925E20 /* CTS_SingletonObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +345,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				5F542ED016684ED6004D6714 /* en */,
+				5FBE9710166BD4CB00D0FE9E /* ko */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -325,6 +354,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				5F6BD606160F101A00755730 /* en */,
+				5FBE9712166BD4CB00D0FE9E /* ko */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -333,6 +363,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				5F6BD618160F101A00755730 /* en */,
+				5FBE9711166BD4CB00D0FE9E /* ko */,
 			);
 			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
@@ -397,7 +428,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CrossTheStreet/CrossTheStreet-Prefix.pch";
 				INFOPLIST_FILE = "CrossTheStreet/CrossTheStreet-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -410,7 +441,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CrossTheStreet/CrossTheStreet-Prefix.pch";
 				INFOPLIST_FILE = "CrossTheStreet/CrossTheStreet-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

@@ -13,6 +13,7 @@
 @end
 
 @implementation CTS_Team
+@synthesize teamIdx;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +28,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    NSLog(@"teamIdx:%@", teamIdx);
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,13 +38,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - 뒤로가기
-- (IBAction)actionViewController:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 
 #pragma mark - 팀 정보 수정
 - (IBAction)actionTeamEdit:(id)sender {
+}
+
+#pragma mark - 뒤로가기
+- (IBAction)action_backtomain:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

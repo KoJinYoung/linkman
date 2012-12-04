@@ -9,6 +9,7 @@
 #import "CTS_TeamList.h"
 #import "CTS_CommonValues.h"
 #import "Reachability.h"
+#import "CTS_Team.h"
 
 @interface CTS_TeamList ()
 
@@ -35,20 +36,7 @@
         return;
     }
     
-    thread_TeamList = nil;
-    [self resetDicAndArrPointers];
-    
-    // request 정보를 담은 딕셔너리 생성
-    NSDictionary *requestDic = [[NSDictionary alloc] initWithObjectsAndKeys:
-                                @"all", @"Sort",
-                                @"0", @"Word",
-                                @"0", @"Page",
-                                @"0", @"TeamMemberNum",
-                                @"0", @"TeamAgeMin",
-                                @"0", @"TeamAgeMax",
-                                @"0", @"TeamSex",
-                                nil];
-    [self readyForRequestWithDictionary:requestDic];    //검색어를 입력했을 때 실행
+    [self refreshTeamList];
 }
 
 - (void)didReceiveMemoryWarning
@@ -174,6 +162,7 @@
         // 이미지 URL을 이용하여 데이터를 로드해와 이미지를 만든다.
         for (int j=0; j<[[[TeamListArr objectAtIndex:i] objectForKey:@"UserPicList"] count]; j++) {
             imageUrlString = [[[TeamListArr objectAtIndex:i] objectForKey:@"UserPicList"] objectAtIndex:j];
+            
             imageUrl = [NSURL URLWithString:imageUrlString];
             
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
@@ -285,9 +274,9 @@
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CTS_CellTeamList *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_Team"];
+    CTS_TeamListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_Team"];
     if (cell == nil) {
-        cell = [[CTS_CellTeamList alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell_Team"] ;
+        cell = [[CTS_TeamListCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell_Team"] ;
     }
     
     // Data 배열과 각각의 Data를 가리킬 포인터 변수
@@ -302,9 +291,34 @@
     // 값 입력
     cell.team_idx = [item objectForKey:@"TeamIdx"];
     [[cell cell_title_lable] setText:[item objectForKey:@"TeamTitle"]];
-    [[cell cell_age_lable] setText:[NSString stringWithFormat:@"%@-%@",[item objectForKey:@"TeamAgeMin"],[item objectForKey:@"TeamAgeMax"]]];
-    [[cell cell_num_lable] setText:[item objectForKey:@"TeamMemberNum"]];
+    [[cell cell_age_lable] setText:[NSString stringWithFormat:@"나이 : %@",[item objectForKey:@"TeamAge"]]];
+    [[cell cell_num_lable] setText:[NSString stringWithFormat:@"%@ 명",[item objectForKey:@"TeamMemberNum"]]];
     
+    UIImage *image = [UIImage imageNamed:@"img_person.png"];
+    
+    for (int i=0; i<[[item objectForKey:@"UserPicList"] count] && i < 5; i++) {
+        switch (i) {
+            case 0:
+                [[cell cell_userpic1_image] setImage:image];
+                break;
+            case 1:
+                [[cell cell_userpic2_image] setImage:image];
+                break;
+            case 2:
+                [[cell cell_userpic3_image] setImage:image];
+                break;
+            case 3:
+                [[cell cell_userpic4_image] setImage:image];
+                break;
+            case 4:
+                [[cell cell_userpic5_image] setImage:image];
+                break;
+            default:
+                break;
+        }
+        
+    }
+    /*
     for (int i=0; i<[[item objectForKey:@"UserPicList"] count] && i < 5; i++) {
         switch (i) {
             case 0:
@@ -325,11 +339,25 @@
             default:
                 break;
         }
+     
     }
-    
+    */
     itemArr = nil;
     
     return cell;
+}
+
+
+#pragma mark - modal view segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([[segue identifier] isEqualToString:@"modal_teamlistTOteam"]) {
+        CTS_Team *tv = [segue destinationViewController];
+        NSArray *teamArr = TeamListArr;
+        NSDictionary *team = [teamArr objectAtIndex:[[self.tbl_TeamList indexPathForSelectedRow] row]];
+        tv.teamIdx = [NSString stringWithFormat:@"%@", [team objectForKey:@"TeamIdx"]];
+    }
 }
 
 #pragma mark - end
