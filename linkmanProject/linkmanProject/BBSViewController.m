@@ -113,19 +113,25 @@
 			if ([oneObject isKindOfClass:[BBSListCell class]])
                 cell = (BBSListCell *)oneObject;
     }
+    // 커스텀셀을 xib파일로 구성한 경우 호출하는 방식
     
     NSInteger row = [indexPath row];
     NSDictionary *rowData = [BBSListArray objectAtIndex:row];
+    // 해당 indexPath의 row에 해당하는 데이터를 배열에서 가져와 딕셔너리에 추가
     
     NSString *profileImagePath = [NSString stringWithString:[rowData objectForKey:@"UserPic"]];
     NSData *profileImageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:profileImagePath]];
     cell.profileImageView.image = [UIImage imageWithData:profileImageData];
+    // 웹의 이미지 url을 가져와 셀의 프로필이미지뷰의 이미지로 추가
+    
     cell.contentTextView.delegate = self;
     cell.contentTextView.text = [rowData objectForKey:@"BBS"];
     cell.contentTextView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
-    cell.userNickLabel.text = [rowData objectForKey:@"UserNick"];
-    cell.timeLabel.text = [rowData objectForKey:@"BBSTime"];
-    cell.commentLabel.text = [rowData objectForKey:@"CmtNum"];
+    // 텍스트뷰의 내용을 BBS로 삽입
+    
+    cell.userNickLabel.text = [rowData objectForKey:@"UserNick"];   // 유저 닉네임
+    cell.timeLabel.text = [rowData objectForKey:@"BBSTime"];        // 작성 시간
+    cell.commentLabel.text = [rowData objectForKey:@"CmtNum"];      // 댓글 수
 
     return cell;
 }
@@ -134,6 +140,45 @@
 #pragma mark TableView Delegate
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger row = [indexPath row];
+    NSDictionary *rowData = [BBSListArray objectAtIndex:row];
+    // 선택 된 셀의 데이터를 로드하여 딕셔너리에 추가
+    
+    NSLog(@"%d", row);
+    NSLog(@"%@", [rowData objectForKey:@"BBSIdx"]);
+    NSMutableDictionary *BBSParams = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"1", @"Token", [rowData objectForKey:@"BBSIdx"], @"BBSIdx", nil];
+    // POST 방식으로 넘겨줄 파라미터 Token,BBSIdx
+    
+    NSString *urlString = [NSString stringWithFormat:@"http://incom.or.kr/ko28/?service=BBS&version=0"];
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:urlString]];
+    NSMutableURLRequest *request = [client requestWithMethod:@"POST" path:nil parameters:BBSParams];
+    // POST 방식으로 요청
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON){
+        //HTTP연동이 성공하였을 경우 서버로 부터 리턴된 값이 JSON이란 id형태로 리턴됩니다.
+        NSLog(@"%@", JSON);
+        
+        NSMutableDictionary *CmtData = [JSON objectForKey:@"Data"];
+        NSArray *CmtList = [CmtData objectForKey:@"CmtList"];
+        //        BBSListArray = [BBSData objectForKey:@"BBSList"];
+        
+        NSMutableArray *CmtListArray = [[NSMutableArray alloc] init];
+        for (NSDictionary *Cmt in CmtList) {
+            NSLog(@"%@ %@", [Cmt objectForKey:@"Cmt"], [Cmt objectForKey:@"CmtTime"]);
+            [CmtListArray addObject:Cmt];
+        }
+        
+    }failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON){
+        
+        NSLog(@"실패:%@",error);
+        //실패시 처리.
+        //        NSDictionary *responseData = [JSON objectForKey:@"_ResInfo"];
+        
+    }];
+    
+    [operation start];
+
+    
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
