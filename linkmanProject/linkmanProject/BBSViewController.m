@@ -7,6 +7,7 @@
 //
 
 #import "BBSViewController.h"
+#import "BBSWriteViewController.h"
 #import "BBSListCell.h"
 #import "JSONKit.h"
 
@@ -21,6 +22,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.navigationItem.rightBarButtonItem = self.editButtonItem;
     }
     return self;
 }
@@ -81,7 +83,16 @@
 
 - (void)dealloc {
     [_tableView release];
+    [_writeBBSBarButtonItem release];
+    [_categoryBBSSegment release];
+    [_toolbar release];
     [super dealloc];
+}
+
+- (IBAction)writeBBS:(id)sender {
+    BBSWriteViewController *bBSWriteViewController = [[BBSWriteViewController alloc] initWithNibName:@"BBSWriteViewController" bundle:nil];
+    [self.navigationController pushViewController:bBSWriteViewController animated:YES];
+    [bBSWriteViewController release];
 }
 
 
@@ -134,6 +145,67 @@
     cell.commentLabel.text = [rowData objectForKey:@"CmtNum"];      // 댓글 수
 
     return cell;
+}
+
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the managed object for the given index path
+        // Ensure that if the user is editing a name field then the change is committed before deleting a row -- this ensures that changes are made to the correct event object.
+		[tableView endEditing:YES];
+		
+        // Delete the managed object at the given index path.
+		
+		// Update the array and table view.
+        NSInteger row = [indexPath row];
+        NSDictionary *rowData = [BBSListArray objectAtIndex:row];
+
+        NSString *urlString = @"http://incom.or.kr/ko28/?service=BBSDelete&version=0";
+        NSDictionary *httpParams = [[NSDictionary alloc] initWithObjectsAndKeys:@"1", @"Token", [rowData objectForKey:@"BBSIdx"], @"BBSIdx", nil];
+        
+        AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:urlString]];
+        NSMutableURLRequest *request = [client requestWithMethod:@"POST" path:nil parameters:httpParams];
+        
+        AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON){
+            //HTTP연동이 성공하였을 경우 서버로 부터 리턴된 값이 JSON이란 id형태로 리턴됩니다.
+            NSLog(@"%@", JSON);
+            
+        }failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON){
+            
+            NSLog(@"실패:%@",error);
+            //실패시 처리.
+            
+        }];
+        [operation start];
+        
+        [BBSListArray removeObjectAtIndex:indexPath.row]; // 먼저 셀에서 빼줌.
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+	}
+}
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+    [super setEditing:editing animated:animated];
+    
+    if(editing)
+    {
+        [_tableView setEditing:YES animated:YES];
+        NSLog(@"editMode on");
+    }
+    else
+    {
+        [_tableView setEditing:NO animated:YES];
+        NSLog(@"Done leave editmode");
+    }}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewCellEditingStyleDelete;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
 }
 
 #pragma mark -

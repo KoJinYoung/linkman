@@ -16,5 +16,9 @@
     NSMutableArray *BBSListArray;
 }
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
+@property (retain, nonatomic) IBOutlet UIToolbar *toolbar;
+@property (retain, nonatomic) IBOutlet UIBarButtonItem *categoryBBSSegment;
+@property (retain, nonatomic) IBOutlet UIBarButtonItem *writeBBSBarButtonItem;
+- (IBAction)writeBBS:(id)sender;
 
 @end
