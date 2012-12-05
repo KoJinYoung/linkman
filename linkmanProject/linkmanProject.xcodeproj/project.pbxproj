@@ -40,6 +40,12 @@
 		04C60A98166E5E8A0070D203 /* DetailBBSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C60A96166E5E8A0070D203 /* DetailBBSViewController.xib */; };
 		04F12172166F26EB00F4EE07 /* BBSListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F12171166F26EB00F4EE07 /* BBSListCell.m */; };
 		04F12175166F26FD00F4EE07 /* BBSListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F12174166F26FD00F4EE07 /* BBSListCell.xib */; };
+		04F1218D166F728A00F4EE07 /* BBSWriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F1218B166F728A00F4EE07 /* BBSWriteViewController.m */; };
+		04F1218E166F728A00F4EE07 /* BBSWriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F1218C166F728A00F4EE07 /* BBSWriteViewController.xib */; };
+		04F12197166F8F3500F4EE07 /* MyInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F12195166F8F3500F4EE07 /* MyInfoViewController.m */; };
+		04F12198166F8F3500F4EE07 /* MyInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F12196166F8F3500F4EE07 /* MyInfoViewController.xib */; };
+		04F1219C166F900E00F4EE07 /* ModifyMyInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F1219A166F900E00F4EE07 /* ModifyMyInfoViewController.m */; };
+		04F1219D166F900E00F4EE07 /* ModifyMyInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F1219B166F900E00F4EE07 /* ModifyMyInfoViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +111,15 @@
 		04F12170166F26EB00F4EE07 /* BBSListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBSListCell.h; sourceTree = "<group>"; };
 		04F12171166F26EB00F4EE07 /* BBSListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSListCell.m; sourceTree = "<group>"; };
 		04F12174166F26FD00F4EE07 /* BBSListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBSListCell.xib; sourceTree = "<group>"; };
+		04F1218A166F728A00F4EE07 /* BBSWriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBSWriteViewController.h; sourceTree = "<group>"; };
+		04F1218B166F728A00F4EE07 /* BBSWriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSWriteViewController.m; sourceTree = "<group>"; };
+		04F1218C166F728A00F4EE07 /* BBSWriteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBSWriteViewController.xib; sourceTree = "<group>"; };
+		04F12194166F8F3500F4EE07 /* MyInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInfoViewController.h; sourceTree = "<group>"; };
+		04F12195166F8F3500F4EE07 /* MyInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfoViewController.m; sourceTree = "<group>"; };
+		04F12196166F8F3500F4EE07 /* MyInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyInfoViewController.xib; sourceTree = "<group>"; };
+		04F12199166F900E00F4EE07 /* ModifyMyInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyMyInfoViewController.h; sourceTree = "<group>"; };
+		04F1219A166F900E00F4EE07 /* ModifyMyInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyMyInfoViewController.m; sourceTree = "<group>"; };
+		04F1219B166F900E00F4EE07 /* ModifyMyInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModifyMyInfoViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,15 +187,13 @@
 				04BBBC17166D0F7B00214A09 /* ViewController.h */,
 				04BBBC18166D0F7B00214A09 /* ViewController.m */,
 				04BBBC1A166D0F7B00214A09 /* ViewController.xib */,
-				04BBBC3A166D0FDF00214A09 /* BBSViewController.h */,
-				04BBBC3B166D0FDF00214A09 /* BBSViewController.m */,
-				04BBBC3C166D0FDF00214A09 /* BBSViewController.xib */,
-				04F12170166F26EB00F4EE07 /* BBSListCell.h */,
-				04F12171166F26EB00F4EE07 /* BBSListCell.m */,
-				04F12174166F26FD00F4EE07 /* BBSListCell.xib */,
-				04C60A94166E5E8A0070D203 /* DetailBBSViewController.h */,
-				04C60A95166E5E8A0070D203 /* DetailBBSViewController.m */,
-				04C60A96166E5E8A0070D203 /* DetailBBSViewController.xib */,
+				04F12194166F8F3500F4EE07 /* MyInfoViewController.h */,
+				04F12195166F8F3500F4EE07 /* MyInfoViewController.m */,
+				04F12196166F8F3500F4EE07 /* MyInfoViewController.xib */,
+				04F12199166F900E00F4EE07 /* ModifyMyInfoViewController.h */,
+				04F1219A166F900E00F4EE07 /* ModifyMyInfoViewController.m */,
+				04F1219B166F900E00F4EE07 /* ModifyMyInfoViewController.xib */,
+				04F12193166F8F0D00F4EE07 /* BBS */,
 				04BBBC06166D0F7B00214A09 /* Supporting Files */,
 			);
 			path = linkmanProject;
@@ -243,6 +256,25 @@
 				04C60A81166E45280070D203 /* UIImageView+AFNetworking.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		04F12193166F8F0D00F4EE07 /* BBS */ = {
+			isa = PBXGroup;
+			children = (
+				04BBBC3A166D0FDF00214A09 /* BBSViewController.h */,
+				04BBBC3B166D0FDF00214A09 /* BBSViewController.m */,
+				04BBBC3C166D0FDF00214A09 /* BBSViewController.xib */,
+				04F1218A166F728A00F4EE07 /* BBSWriteViewController.h */,
+				04F1218B166F728A00F4EE07 /* BBSWriteViewController.m */,
+				04F1218C166F728A00F4EE07 /* BBSWriteViewController.xib */,
+				04F12170166F26EB00F4EE07 /* BBSListCell.h */,
+				04F12171166F26EB00F4EE07 /* BBSListCell.m */,
+				04F12174166F26FD00F4EE07 /* BBSListCell.xib */,
+				04C60A94166E5E8A0070D203 /* DetailBBSViewController.h */,
+				04C60A95166E5E8A0070D203 /* DetailBBSViewController.m */,
+				04C60A96166E5E8A0070D203 /* DetailBBSViewController.xib */,
+			);
+			name = BBS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,6 +356,9 @@
 				04BBBC3E166D0FDF00214A09 /* BBSViewController.xib in Resources */,
 				04C60A98166E5E8A0070D203 /* DetailBBSViewController.xib in Resources */,
 				04F12175166F26FD00F4EE07 /* BBSListCell.xib in Resources */,
+				04F1218E166F728A00F4EE07 /* BBSWriteViewController.xib in Resources */,
+				04F12198166F8F3500F4EE07 /* MyInfoViewController.xib in Resources */,
+				04F1219D166F900E00F4EE07 /* ModifyMyInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +409,9 @@
 				04C60A8A166E45280070D203 /* UIImageView+AFNetworking.m in Sources */,
 				04C60A97166E5E8A0070D203 /* DetailBBSViewController.m in Sources */,
 				04F12172166F26EB00F4EE07 /* BBSListCell.m in Sources */,
+				04F1218D166F728A00F4EE07 /* BBSWriteViewController.m in Sources */,
+				04F12197166F8F3500F4EE07 /* MyInfoViewController.m in Sources */,
+				04F1219C166F900E00F4EE07 /* ModifyMyInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

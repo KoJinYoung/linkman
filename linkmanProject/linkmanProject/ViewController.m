@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "BBSViewController.h"
+#import "MyInfoViewController.h"
 
 @interface ViewController ()
 
@@ -39,5 +40,8 @@
 }
 
 - (IBAction)showProfile:(id)sender {
+    MyInfoViewController *myInfoViewController = [[MyInfoViewController alloc] initWithNibName:@"MyInfoViewController" bundle:nil];
+    [self.navigationController pushViewController:myInfoViewController animated:YES];
+    [myInfoViewController release];
 }
 @end
