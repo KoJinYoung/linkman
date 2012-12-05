@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AFNetworking.h"
 
-@interface BBSViewController : UIViewController {
+@interface BBSViewController : UIViewController <UITextViewDelegate> {
     NSOperationQueue *queue;
     
 //    NSMutableDictionary *BBSListDic;

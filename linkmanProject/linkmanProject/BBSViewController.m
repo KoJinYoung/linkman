@@ -7,6 +7,7 @@
 //
 
 #import "BBSViewController.h"
+#import "BBSListCell.h"
 #import "JSONKit.h"
 
 @interface BBSViewController ()
@@ -96,18 +97,35 @@
     return [BBSListArray count];
 }
 
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 107;
+}
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    BBSListCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"BBSListCell" owner:self options:nil];
+        
+        for (id oneObject in nib)
+			if ([oneObject isKindOfClass:[BBSListCell class]])
+                cell = (BBSListCell *)oneObject;
     }
     
     NSInteger row = [indexPath row];
     NSDictionary *rowData = [BBSListArray objectAtIndex:row];
     
-    cell.textLabel.text = [rowData objectForKey:@"UserNick"];
-    cell.detailTextLabel.text = [rowData objectForKey:@"BBSTime"];
+    NSString *profileImagePath = [NSString stringWithString:[rowData objectForKey:@"UserPic"]];
+    NSData *profileImageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:profileImagePath]];
+    cell.profileImageView.image = [UIImage imageWithData:profileImageData];
+    cell.contentTextView.delegate = self;
+    cell.contentTextView.text = [rowData objectForKey:@"BBS"];
+    cell.contentTextView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    cell.userNickLabel.text = [rowData objectForKey:@"UserNick"];
+    cell.timeLabel.text = [rowData objectForKey:@"BBSTime"];
+    cell.commentLabel.text = [rowData objectForKey:@"CmtNum"];
 
     return cell;
 }

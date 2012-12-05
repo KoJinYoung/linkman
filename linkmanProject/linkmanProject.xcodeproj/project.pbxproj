@@ -38,6 +38,8 @@
 		04C60A93166E4C990070D203 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C60A91166E4C490070D203 /* JSONKit.m */; };
 		04C60A97166E5E8A0070D203 /* DetailBBSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C60A95166E5E8A0070D203 /* DetailBBSViewController.m */; };
 		04C60A98166E5E8A0070D203 /* DetailBBSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C60A96166E5E8A0070D203 /* DetailBBSViewController.xib */; };
+		04F12172166F26EB00F4EE07 /* BBSListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F12171166F26EB00F4EE07 /* BBSListCell.m */; };
+		04F12175166F26FD00F4EE07 /* BBSListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F12174166F26FD00F4EE07 /* BBSListCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,9 @@
 		04C60A94166E5E8A0070D203 /* DetailBBSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailBBSViewController.h; sourceTree = "<group>"; };
 		04C60A95166E5E8A0070D203 /* DetailBBSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailBBSViewController.m; sourceTree = "<group>"; };
 		04C60A96166E5E8A0070D203 /* DetailBBSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailBBSViewController.xib; sourceTree = "<group>"; };
+		04F12170166F26EB00F4EE07 /* BBSListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBSListCell.h; sourceTree = "<group>"; };
+		04F12171166F26EB00F4EE07 /* BBSListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSListCell.m; sourceTree = "<group>"; };
+		04F12174166F26FD00F4EE07 /* BBSListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBSListCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +175,9 @@
 				04BBBC3A166D0FDF00214A09 /* BBSViewController.h */,
 				04BBBC3B166D0FDF00214A09 /* BBSViewController.m */,
 				04BBBC3C166D0FDF00214A09 /* BBSViewController.xib */,
+				04F12170166F26EB00F4EE07 /* BBSListCell.h */,
+				04F12171166F26EB00F4EE07 /* BBSListCell.m */,
+				04F12174166F26FD00F4EE07 /* BBSListCell.xib */,
 				04C60A94166E5E8A0070D203 /* DetailBBSViewController.h */,
 				04C60A95166E5E8A0070D203 /* DetailBBSViewController.m */,
 				04C60A96166E5E8A0070D203 /* DetailBBSViewController.xib */,
@@ -315,6 +323,7 @@
 				04BBBC1C166D0F7B00214A09 /* ViewController.xib in Resources */,
 				04BBBC3E166D0FDF00214A09 /* BBSViewController.xib in Resources */,
 				04C60A98166E5E8A0070D203 /* DetailBBSViewController.xib in Resources */,
+				04F12175166F26FD00F4EE07 /* BBSListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +373,7 @@
 				04C60A89166E45280070D203 /* AFXMLRequestOperation.m in Sources */,
 				04C60A8A166E45280070D203 /* UIImageView+AFNetworking.m in Sources */,
 				04C60A97166E5E8A0070D203 /* DetailBBSViewController.m in Sources */,
+				04F12172166F26EB00F4EE07 /* BBSListCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
